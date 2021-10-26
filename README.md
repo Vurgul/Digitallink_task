@@ -15,14 +15,19 @@ Web-сервис для проверки наличия телефона в ст
 ```
 pip install -r requirements.txt
 ``` 
-3. В папке с файлом manage.py выполните команду:
+3. Инициализируйте и создайте миграции
+ ```
+python manage.py migrate
+python manage.py makemigrations
 ```
-python3 manage.py runserver
+4. В папке с файлом manage.py выполните команду:
 ```
-4. Для загрузки данных из excel-документа замените файл "DATA.xlsx" в корень проекта,
+python manage.py runserver
+```
+5. Для загрузки данных из excel-документа замените файл "DATA.xlsx" в корень проекта,
 затем выполните команду:
 ```
-python3 manage.py add_number
-``` 
+python manage.py add_number
+```
 ### Автор
 Кудрявцев Д.И. (Vurgul)
