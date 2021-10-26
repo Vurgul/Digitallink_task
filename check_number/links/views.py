@@ -1,12 +1,25 @@
 from django.shortcuts import render
 
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
 from django.http import HttpResponse, JsonResponse
 
 from .models import Link
+from .serializers import LinksSerializer
 
 import json
-
 import re
+
+
+class GetLinkInfoView(APIView):
+    def get(self, request):
+        queryset = Link.objects.all()
+        serializer_for_queryset = LinksSerializer(
+            instance=queryset,
+            many=True
+        )
+        return Response(serializer_for_queryset.data)
 
 
 def index(request):

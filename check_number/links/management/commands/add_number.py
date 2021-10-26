@@ -22,4 +22,3 @@ class Command(BaseCommand):
                     Link.objects.create(number=number)
 
 
-

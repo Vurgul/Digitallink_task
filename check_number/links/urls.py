@@ -5,6 +5,7 @@ from . import views
 app_name = 'links'
 
 urlpatterns = [
+    path('api/links/', views.GetLinkInfoView.as_view()),
     # Главная страница
     path('', views.index, name='index'),
     # Список постов групп
