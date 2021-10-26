@@ -8,7 +8,7 @@ urlpatterns = [
     path('api/links/', views.GetLinkInfoView.as_view()),
     # Главная страница
     path('', views.index, name='index'),
-    # Список постов групп
+    # Страница номера
     path(
         '<str:slug>',
         views.number,

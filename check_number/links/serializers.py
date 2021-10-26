@@ -1,6 +1,8 @@
 from rest_framework import serializers
+from .models import Link
 
 
-class LinksSerializer(serializers.Serializer):
-    number = serializers.CharField(max_length=15)
-    found = serializers.BooleanField(default=True)
+class LinksSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Link
+        fields = '__all__'
